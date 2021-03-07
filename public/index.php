@@ -18,5 +18,6 @@ $config = [
 $app = new Application(dirname(__DIR__), $config);
 
 $app->router->get('/', [HomeController::class, 'index']);
+$app->router->get('/login', [HomeController::class, 'login']);
 
 $app->run();
