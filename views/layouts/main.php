@@ -25,6 +25,8 @@
             </li>
           </ul>
           <?php use thecodeholic\phpmvc\Application;
+                use app\models\User;
+                $model = new User();
 
             if (Application::isGuest()): ?>
                 <ul class="navbar-nav ml-auto">
@@ -36,21 +38,19 @@
                     </li>
                 </ul>
             <?php else: ?>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/logout">
-                            Welcome <?php echo Application::$app->user->getDisplayName() ?> (Logout)
-                        </a>
-                    </li>
+              <div class="btn-group me-2">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?php echo Application::$app->user->getDisplayName() ?>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/logout">Logout</a></li>
                 </ul>
+              </div>
             <?php endif; ?>
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <select class="form-select me-2" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php $model->userTypeTree() ?>
                   </select>
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>

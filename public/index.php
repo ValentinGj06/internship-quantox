@@ -20,5 +20,8 @@ $app = new Application(dirname(__DIR__), $config);
 $app->router->get('/', [HomeController::class, 'index']);
 $app->router->get('/login', [HomeController::class, 'login']);
 $app->router->post('/login', [HomeController::class, 'login']);
+$app->router->get('/register', [HomeController::class, 'register']);
+$app->router->post('/register', [HomeController::class, 'register']);
+$app->router->get('/logout', [HomeController::class, 'logout']);
 
 $app->run();
