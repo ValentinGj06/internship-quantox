@@ -10,3 +10,5 @@ PHP Backend Internship Test
 5. Go to the public folder.
 6. Start php server by running command `php -S 127.0.0.1:8080`.
 7. Open in browser `http://127.0.0.1:8080`.
+
+## NOTE: The project is not developed completely. Searching Feature is missing.
