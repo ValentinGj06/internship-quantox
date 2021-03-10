@@ -1,6 +1,7 @@
 <?php
 
 use app\controllers\HomeController;
+use app\controllers\ResultController;
 use thecodeholic\phpmvc\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -23,5 +24,7 @@ $app->router->post('/login', [HomeController::class, 'login']);
 $app->router->get('/register', [HomeController::class, 'register']);
 $app->router->post('/register', [HomeController::class, 'register']);
 $app->router->get('/logout', [HomeController::class, 'logout']);
+$app->router->get('/result', [ResultController::class, 'index']);
+$app->router->post('/result', [ResultController::class, 'fetch']);
 
 $app->run();
