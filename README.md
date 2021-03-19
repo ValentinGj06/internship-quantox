@@ -3,7 +3,7 @@ PHP Backend Internship Test
 
 ## Demo
 
-#### You can see the project live at: [Demo Link](https://quantox.codexlab.agency/)
+#### You can see the project live at: [Demo Link](https://quantox.valentingjorgoski.com/)
 
 ## Installation
 
